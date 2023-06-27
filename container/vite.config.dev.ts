@@ -2,16 +2,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
+import packageJson from './package.json'
+
 
 export default defineConfig({
+  mode: 'development',
   plugins: [
     react(),
     federation({
-      name: 'hostApp',
+      name: 'containerApp',
       remotes: {
-        dashboard: 'http://localhost:5001/assets/remoteEntry.js',
+        dashboardApp: 'http://localhost:5001/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+       shared: packageJson.dependencies,
     }),
   ],
 });

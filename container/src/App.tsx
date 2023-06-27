@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-const RemoteComponent = lazy(() => import('dashboard/DashboardApp'));
+const RemoteComponent = lazy(() => import('dashboardApp/Dashboard'));
 
 function App() {
 	return (

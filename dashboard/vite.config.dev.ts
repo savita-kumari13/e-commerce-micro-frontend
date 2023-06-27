@@ -1,19 +1,17 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
-import packageJson from './package.json'
 
 export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'dashboard',
+      name: 'dashboardApp',
       filename: 'remoteEntry.js',
       exposes: {
-        './DashboardApp': './src/components/Dashboard',
+        './Dashboard': './src/App.tsx',
       },
-      shared: packageJson.dependencies,
+       shared: packageJson.dependencies,
     }),
   ],
 

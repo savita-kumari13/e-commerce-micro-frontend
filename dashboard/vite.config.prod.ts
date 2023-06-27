@@ -4,19 +4,24 @@ import react from '@vitejs/plugin-react-swc';
 import federation from '@originjs/vite-plugin-federation';
 import packageJson from './package.json'
 
-const domain = process.env.PRODUCTION_DOMAIN
-
 export default defineConfig({
   mode: 'production',
   plugins: [
     react(),
     federation({
-      name: 'hostApp',
-      remotes: {
-        dashboard: `${domain}/asset/marketing/remoteEntry.js`,
+      name: 'dashboardApp',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Dashboard': './src/App.tsx',
       },
       shared: packageJson.dependencies,
-
     }),
   ],
+
+  build: {
+    modulePreload: false,
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false,
+  },
 });

@@ -4,13 +4,10 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite --port=5001 --strictPort --config vite.config.dev.js",
-		"build": "tsc && vite build --config vite.config.dev.js",
-		"build:dev": "tsc && vite --config vite.config.dev.js",
-		"build:prod": "tsc && vite --config vite.config.prod.js",
-		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-		"preview": "vite preview --port=5001 --strictPort",
-		"deploy": "yarn build && yarn preview"
+		"dev": "vite --port=5001 --strictPort --config  vite.config.dev.js",
+    "build": "vite build --config  vite.config.prod.js",
+    "preview": "vite preview --port=5001 --strictPort",
+    "deploy": "npm run build && npm run preview"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
