@@ -1,0 +1,1 @@
+E-commerce frontend app having independent apps build using micro frontend
