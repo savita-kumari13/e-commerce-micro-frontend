@@ -6,7 +6,7 @@ function App() {
 		<>
 			<div>
 				<h1>Host Application</h1>
-				<Suspense fallback={<div>Loading Remote Component...</div>}>
+				<Suspense fallback={<div>Loading Remote Component..</div>}>
 					<RemoteComponent />
 				</Suspense>
 			</div>
