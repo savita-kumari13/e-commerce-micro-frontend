@@ -16,7 +16,11 @@ export default defineConfig({
         dashboard: `${domain}/assets/marketing/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
-
     }),
   ],
+  build: {
+    rollupOptions: {
+      external: ['dashboardApp/Dashboard'],
+    },
+  }
 });
