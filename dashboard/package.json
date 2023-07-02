@@ -3,6 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
+  "main": "main.tsx",
 	"scripts": {
 		"dev": "vite --port=5001 --strictPort --config  vite.config.dev.js",
     "build": "vite build --config  vite.config.prod.js",
